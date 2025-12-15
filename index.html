@@ -3,42 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Redirecting…</title>
-
-  <!-- Fallback if JS is blocked -->
-  <meta http-equiv="refresh" content="2;url=https://store.steampowered.com/app/YOUR_STEAM_APP_ID" />
-
-  <style>
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding: 24px;
-    }
-  </style>
-</head>
-<body>
-  <p>Redirecting…</p>
-  <p>If nothing happens, choose:</p>
-  <ul>
-    <li><a href="https://apps.apple.com/us/app/boxes-lost-fragments/id1575369135">App Store (iOS)</a></li>
-    <li><a href="https://play.google.com/store/apps/details?id=com.snapbreak.boxes&hl=en">Google Play (Android)</a></li>
-    <li><a href="https://play.google.com/store/apps/details?id=com.snapbreak.boxes&hl=en">Steam (Desktop)</a></li>
-  </ul>
+  <title></title>
 
   <script>
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    (function () {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
 
-    const isAndroid = /Android/i.test(ua);
-    const isIOS =
-      /iPad|iPhone|iPod/.test(ua) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+      const isIOS =
+        /iPad|iPhone|iPod/.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-    if (isAndroid) {
-      window.location.replace("https://play.google.com/store/apps/details?id=com.snapbreak.boxes&hl=en");
-    } else if (isIOS) {
-      window.location.replace("https://apps.apple.com/us/app/boxes-lost-fragments/id1575369135");
-    } else {
-      window.location.replace("https://play.google.com/store/apps/details?id=com.snapbreak.boxes&hl=en");
-    }
+      if (isIOS) {
+        window.location.replace("https://apps.apple.com/us/app/boxes-lost-fragments/id1575369135");
+      } else if (isAndroid) {
+        window.location.replace("https://play.google.com/store/apps/details?id=com.snapbreak.boxes&hl=en");
+      } else {
+        window.location.replace("https://store.steampowered.com/app/XXXXXXXX");
+      }
+    })();
   </script>
-</body>
+</head>
+<body></body>
 </html>
